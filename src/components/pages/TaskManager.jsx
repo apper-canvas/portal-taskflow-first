@@ -185,7 +185,7 @@ const TaskManager = () => {
             task.dueDate && isTomorrow(parseISO(task.dueDate))
           )
           break
-        case 'this-week':
+case 'this-week': {
           const weekFromNow = new Date(today)
           weekFromNow.setDate(weekFromNow.getDate() + 7)
           filtered = filtered.filter(task => 
@@ -194,6 +194,7 @@ const TaskManager = () => {
             parseISO(task.dueDate) <= weekFromNow
           )
           break
+        }
         case 'overdue':
           filtered = filtered.filter(task => 
             task.dueDate && 

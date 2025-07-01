@@ -70,13 +70,14 @@ export const getDateRange = (type) => {
         start: startOfDay(now),
         end: endOfDay(now)
       }
-    case 'tomorrow':
+case 'tomorrow': {
       const tomorrow = new Date(now)
       tomorrow.setDate(tomorrow.getDate() + 1)
       return {
         start: startOfDay(tomorrow),
         end: endOfDay(tomorrow)
       }
+    }
     case 'this-week':
       return {
         start: startOfWeek(now),
